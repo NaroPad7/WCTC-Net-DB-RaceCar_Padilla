@@ -3,7 +3,7 @@
 namespace RaceTrack.RaceTrack.Cars
 {
     public abstract class RaceCar
-    {
+    {   
         protected RaceCar()
         {
             Position = 0;
@@ -30,9 +30,17 @@ namespace RaceTrack.RaceTrack.Cars
 
         public abstract void StartEngine();
 
+        public virtual void StopEngine()
+        {
+            Console.WriteLine($"The {Name} engine has stopped and ends in {Position}!");
+        }
+       
+
         public virtual void Brake()
         {
             Console.WriteLine($"The {Name} ends in position {Position}!");
         }
+        
     }
+    
 }

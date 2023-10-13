@@ -26,6 +26,7 @@ namespace RaceTrack.RaceTrack
             Drivers.Add(new FarmerJoe(new Tractor()));
             Drivers.Add(new Antonio(new FordGt()));
             Drivers.Add(new SoccerMom(new Minivan()));
+            Drivers.Add(new BugsBunny(new Motorcycle()));
         }
 
         public void DriversReady()
@@ -39,12 +40,15 @@ namespace RaceTrack.RaceTrack
 
         public void StartRace()
         {
-            foreach (var driver in Drivers)
-            {
-                driver.Drive();
-            }
-            Thread.Sleep(1000);
+             foreach (var driver in Drivers)
+             {
+                 driver.Drive();
+             }
+             Thread.Sleep(1000);
+            
         }
+        
+
 
         public void AnnouncePositions()
         {
@@ -57,9 +61,15 @@ namespace RaceTrack.RaceTrack
 
         public void EndRace()
         {
+            /*foreach (var driver in Drivers)
+            {
+                driver.Stop();
+            }
+            Thread.Sleep(1000);*/
             foreach (var driver in Drivers)
             {
                 driver.Stop();
+                driver.StopEngine();
             }
             Thread.Sleep(1000);
         }
